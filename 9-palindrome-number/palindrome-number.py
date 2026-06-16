@@ -6,14 +6,15 @@ class Solution(object):
         """
         if x < 0:
             return False
-        elif x != 0 and x % 10 == 0:
+        if x != 0 and x % 10 == 0:
             return False
-        else:
-            rev = 0
-            while x > rev:
-                rev = rev * 10 + x % 10
-                x //= 10
-            return x == rev or x == rev // 10
+        
+        rev = 0
+        num = x
+        while num > rev:
+            rev = rev * 10 + (num % 10)
+            num //= 10
+        return num == rev or num == rev // 10
 
 
         
